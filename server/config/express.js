@@ -15,7 +15,7 @@ module.exports = function(app, config){
 	app.set('view engine', 'jade');
 	app.use(logger('dev'));
 	app.use(cookieParser());
-	app.use(bodyParser());
+	app.use(bodyParser.urlencoded({extended: true}));
 	app.use(session({
     secret: 'jlab rocks',
     resave: true,
@@ -23,5 +23,14 @@ module.exports = function(app, config){
 	}));
 	app.use(passport.initialize());
 	app.use(passport.session());
-	app.use(express.static(express.static(config.rootPath + '/public')));
+
+	console.log(config.rootPath);
+	app.use(stylus.middleware({
+		src: config.rootPath + '/public',
+		compile: compile
+	}));
+	app.use(express.static(config.rootPath + '/public'));
+
+
+
 }
