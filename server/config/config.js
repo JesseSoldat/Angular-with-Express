@@ -5,6 +5,6 @@ module.exports = {
 	development: { 
 		db: 'mongodb://jesse:ichiban987@ds011933.mlab.com:11933/jlab_parse',
 		rootPath: rootPath,
-		port: process.env.PORT || 3030
+		port: process.env.PORT || 3000
 	}
 }
