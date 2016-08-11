@@ -23,8 +23,7 @@ module.exports = function(app, config){
 	}));
 	app.use(passport.initialize());
 	app.use(passport.session());
-
-	console.log(config.rootPath);
+	
 	app.use(stylus.middleware({
 		src: config.rootPath + '/public',
 		compile: compile

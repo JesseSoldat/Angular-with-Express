@@ -10,5 +10,7 @@ module.exports = function(config){
 		console.log('Jlab is open');
 	});
 
-	
+	userModel.createDefaultUsers();
+
+
 };
